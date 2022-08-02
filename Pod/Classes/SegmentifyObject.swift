@@ -13,4 +13,6 @@ import Foundation
     @objc public var params:[String:AnyObject]?
     public var nextPage: Bool?
     public var testMode: Bool?
+    @objc public var region: String?
+
 }
