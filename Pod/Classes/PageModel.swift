@@ -4,9 +4,9 @@
 
 import Foundation
 
-public class PageModel:SegmentifyObject {
+@objc public class PageModel:SegmentifyObject {
    public override init() {}
-   public var category:String?
+   @objc public var category:String?
    public var subCategory:String?
    public var recommendIds:[String]?
 }
