@@ -8,7 +8,7 @@ enum SearchCodingKeys: String, CodingKey {
     case search
 }
 
-public class SegmentifyManager : NSObject {
+@objc public class SegmentifyManager : NSObject {
     
     static let sdkVersion = "1.0"
 
