@@ -2189,7 +2189,7 @@ public class SegmentifyManager : NSObject {
     }
     
     //Banner GroupView Event
-    @objc open func sendBannerGroupViewEvent(segmentifyObject : BannerGroupViewModel) {
+    open func sendBannerGroupViewEvent(segmentifyObject : BannerGroupViewModel) {
         
         var bannerArray = [Any]()
         segmentifyObject.banners?.forEach {
@@ -2213,7 +2213,7 @@ public class SegmentifyManager : NSObject {
     }
     
     //Banner InternalBannerGroup Event
-    @objc open func sendInternalBannerGroupEvent(segmentifyObject : BannerGroupViewModel) {
+    open func sendInternalBannerGroupEvent(segmentifyObject : BannerGroupViewModel) {
         
         var bannerArray = [Any]()
         segmentifyObject.banners?.forEach {
