@@ -8,7 +8,7 @@ import Foundation
     @objc public override init() {}
     @objc public var productId:String?
     @objc public var name:String?
-    @objc public var inStock:Bool?
+    public var inStock:Bool?
     @objc public var url:String?
     @objc public var mUrl:String?
     @objc public var image:String?
@@ -26,6 +26,6 @@ import Foundation
     @objc public var colors:[String]?
     @objc public var sizes:[String]?
     @objc public var labels:[String]?
-    @objc public var noUpdate:Bool?
-    @objc public var activeBanners:[ClickedBannerObject]?
+    public var noUpdate:Bool?
+    public var activeBanners:[ClickedBannerObject]?
 }
