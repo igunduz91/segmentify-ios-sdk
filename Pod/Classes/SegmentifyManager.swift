@@ -122,7 +122,7 @@ public class SegmentifyManager : NSObject {
         }
     }
     
-    @objc override init() {
+    override init() {
         super.init()
         self.eventRequest = SegmentifyRegisterRequest()
         
