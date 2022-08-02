@@ -4,7 +4,7 @@
 
 import Foundation
 
-public class CustomEventModel:SegmentifyObject {
-    public  override init() {}
-    public var type:String?
+@objc public class CustomEventModel:SegmentifyObject {
+    @objc public  override init() {}
+    @objc public var type:String?
 }

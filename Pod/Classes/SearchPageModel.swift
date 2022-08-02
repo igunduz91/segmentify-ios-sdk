@@ -4,8 +4,8 @@
 
 import Foundation
 
-public class SearchPageModel :SegmentifyObject {
-   public override init() {}
-   public var query:String?
+@objc public class SearchPageModel :SegmentifyObject {
+   @objc public override init() {}
+   @objc public var query:String?
     
 }
