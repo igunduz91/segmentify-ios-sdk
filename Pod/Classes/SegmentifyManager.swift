@@ -1299,7 +1299,7 @@ public class SegmentifyManager : NSObject {
     }
     
     //Checkout View Basket Event
-    open func sendViewBasket(segmentifyObject : CheckoutModel, callback: @escaping (_ recommendation: [RecommendationModel]) -> Void) {
+    @objc open func sendViewBasket(segmentifyObject : CheckoutModel, callback: @escaping (_ recommendation: [RecommendationModel]) -> Void) {
         eventRequest.eventName = SegmentifyManager.checkoutEventName
         eventRequest.checkoutStep = SegmentifyManager.viewBasketStep
         eventRequest.instanceId = nil
@@ -1347,7 +1347,7 @@ public class SegmentifyManager : NSObject {
     }
     
     //Add or Remove Basket Event
-    open func sendAddOrRemoveBasket(segmentifyObject : BasketModel) {
+    @objc open func sendAddOrRemoveBasket(segmentifyObject : BasketModel) {
         eventRequest.eventName = SegmentifyManager.basketOperationsEventName
         eventRequest.instanceId = nil
         eventRequest.interactionId = nil
@@ -1641,7 +1641,7 @@ public class SegmentifyManager : NSObject {
     
     //Alternative Events
     //Register Event
-    open func sendUserRegister(username : String?, fullName : String?, email : String?, mobilePhone : String?, gender : String?, age : String?, birthdate : String?) {
+    @objc open func sendUserRegister(username : String?, fullName : String?, email : String?, mobilePhone : String?, gender : String?, age : String?, birthdate : String?) {
         eventRequest.eventName = SegmentifyManager.userOperationEventName
         eventRequest.userOperationStep = SegmentifyManager.updateUserStep
         eventRequest.oldUserId = nil
@@ -1679,7 +1679,7 @@ public class SegmentifyManager : NSObject {
     }
     
     //Login Event
-    open func sendUserLogin(username: String?, email: String?) {
+    @objc open func sendUserLogin(username: String?, email: String?) {
         eventRequest.eventName = SegmentifyManager.userOperationEventName
         eventRequest.userOperationStep = SegmentifyManager.signInStep
         eventRequest.oldUserId = nil
@@ -1702,7 +1702,7 @@ public class SegmentifyManager : NSObject {
     }
     
     //Logout Event
-    open func sendUserLogout(username: String?, email: String?) {
+    @objc open func sendUserLogout(username: String?, email: String?) {
         eventRequest.eventName = SegmentifyManager.userOperationEventName
         eventRequest.userOperationStep = SegmentifyManager.signInStep
         eventRequest.oldUserId = nil
@@ -1725,7 +1725,7 @@ public class SegmentifyManager : NSObject {
     }
     
     //User Update Event
-    open func sendUserUpdate(username : String?, fullName : String?, email : String?, mobilePhone : String?, gender : String?, age : String?, birthdate : String?, isRegistered : AnyObject?, isLogin : AnyObject?) {
+    @objc open func sendUserUpdate(username : String?, fullName : String?, email : String?, mobilePhone : String?, gender : String?, age : String?, birthdate : String?, isRegistered : AnyObject?, isLogin : AnyObject?) {
         eventRequest.eventName = SegmentifyManager.userOperationEventName
         eventRequest.userOperationStep = SegmentifyManager.updateUserStep
         eventRequest.username = username
@@ -1770,7 +1770,7 @@ public class SegmentifyManager : NSObject {
     }
 
     //Checkout Purchase Event
-    open func sendPurchase(totalPrice : NSNumber, productList:[Any], orderNo : String?,lang :String?,  params :[String:AnyObject]?, callback: @escaping (_ recommendation: [RecommendationModel]) -> Void) {
+    @objc open func sendPurchase(totalPrice : NSNumber, productList:[Any], orderNo : String?,lang :String?,  params :[String:AnyObject]?, callback: @escaping (_ recommendation: [RecommendationModel]) -> Void) {
         eventRequest.eventName = SegmentifyManager.checkoutEventName
         eventRequest.totalPrice = totalPrice
         eventRequest.products = productList
@@ -1801,7 +1801,7 @@ public class SegmentifyManager : NSObject {
     }
     
     //Checkout Payment Event
-    open func sendPaymentInformation(totalPrice : NSNumber, productList : [Any],lang :String?,  params :[String:AnyObject]?, callback: @escaping (_ recommendation: [RecommendationModel]) -> Void) {
+    @objc open func sendPaymentInformation(totalPrice : NSNumber, productList : [Any],lang :String?,  params :[String:AnyObject]?, callback: @escaping (_ recommendation: [RecommendationModel]) -> Void) {
         eventRequest.eventName = SegmentifyManager.checkoutEventName
         eventRequest.totalPrice = totalPrice
         eventRequest.checkoutStep = SegmentifyManager.paymentInformationStep
@@ -1828,7 +1828,7 @@ public class SegmentifyManager : NSObject {
     }
     
     //Checkout Customer Information Event
-    open func sendCustomerInformation(totalPrice : NSNumber, productList : [Any],lang :String?,  params :[String:AnyObject]?, callback: @escaping (_ recommendation: [RecommendationModel]) -> Void) {
+    @objc open func sendCustomerInformation(totalPrice : NSNumber, productList : [Any],lang :String?,  params :[String:AnyObject]?, callback: @escaping (_ recommendation: [RecommendationModel]) -> Void) {
         eventRequest.eventName = SegmentifyManager.checkoutEventName
         eventRequest.totalPrice = totalPrice
         eventRequest.products = productList
@@ -1856,7 +1856,7 @@ public class SegmentifyManager : NSObject {
     }
     
     //Checkout View Basket Event
-    open func sendViewBasket(totalPrice : NSNumber, productList : [Any], currency : String?,lang :String?, params :[String:AnyObject]?, callback: @escaping (_ recommendation: [RecommendationModel]) -> Void) {
+    @objc open func sendViewBasket(totalPrice : NSNumber, productList : [Any], currency : String?,lang :String?, params :[String:AnyObject]?, callback: @escaping (_ recommendation: [RecommendationModel]) -> Void) {
         eventRequest.eventName = SegmentifyManager.checkoutEventName
         eventRequest.totalPrice = totalPrice
         eventRequest.products = productList
@@ -1887,7 +1887,7 @@ public class SegmentifyManager : NSObject {
     }
     
     //Add or Remove Basket Event
-    open func sendAddOrRemoveBasket(basketStep : String, productID : String, quantity : NSNumber,price : NSNumber?) {
+    @objc open func sendAddOrRemoveBasket(basketStep : String, productID : String, quantity : NSNumber,price : NSNumber?) {
         eventRequest.eventName = SegmentifyManager.basketOperationsEventName
         eventRequest.basketStep = basketStep
         eventRequest.productID = productID
@@ -2015,7 +2015,7 @@ public class SegmentifyManager : NSObject {
         setIDAndSendEventWithCallback(callback: callback)
     }
     
-    open func sendCustomEvent(type : String, params :[String:AnyObject]?, lang : String?, callback: @escaping (_ recommendation: [RecommendationModel]) -> Void) {
+    @objc open func sendCustomEvent(type : String, params :[String:AnyObject]?, lang : String?, callback: @escaping (_ recommendation: [RecommendationModel]) -> Void) {
         eventRequest.eventName = SegmentifyManager.customEventName
         eventRequest.type = type
         
@@ -2041,7 +2041,7 @@ public class SegmentifyManager : NSObject {
         setIDAndSendEventWithCallback(callback: callback)
     }
     
-    open func sendImpression(instanceId : String, interactionId : String) {
+    @objc open func sendImpression(instanceId : String, interactionId : String) {
         eventRequest.eventName = SegmentifyManager.interactionEventName
         eventRequest.type = SegmentifyManager.impressionStep
         eventRequest.instanceId = instanceId
@@ -2058,7 +2058,7 @@ public class SegmentifyManager : NSObject {
         setIDAndSendEvent()
     }
     
-    open func sendWidgetView(instanceId : String, interactionId : String) {
+    @objc open func sendWidgetView(instanceId : String, interactionId : String) {
         eventRequest.eventName = SegmentifyManager.interactionEventName
         eventRequest.type = SegmentifyManager.widgetViewStep
         eventRequest.instanceId = instanceId
@@ -2075,7 +2075,7 @@ public class SegmentifyManager : NSObject {
         setIDAndSendEvent()
     }
 
-    open func sendSearchClickView(instanceId : String, interactionId : String) {
+    @objc open func sendSearchClickView(instanceId : String, interactionId : String) {
         eventRequest.eventName = SegmentifyManager.interactionEventName
         eventRequest.type = SegmentifyManager.searchStep
         eventRequest.instanceId = instanceId
@@ -2092,7 +2092,7 @@ public class SegmentifyManager : NSObject {
         setIDAndSendEvent()
     }
     
-    open func sendClickView(instanceId : String, interactionId : String) {
+    @objc open func sendClickView(instanceId : String, interactionId : String) {
         eventRequest.eventName = SegmentifyManager.interactionEventName
         eventRequest.type = SegmentifyManager.clickStep
         eventRequest.instanceId = instanceId
@@ -2112,7 +2112,7 @@ public class SegmentifyManager : NSObject {
     /* bannerify events */
     
     //Banner Impression Event
-    open func sendBannerImpressionEvent(segmentifyObject : BannerOperationsModel) {
+    @objc open func sendBannerImpressionEvent(segmentifyObject : BannerOperationsModel) {
         
         if segmentifyObject.type == nil {
             segmentifyObject.type = SegmentifyManager.bannerImpressionStep
@@ -2140,7 +2140,7 @@ public class SegmentifyManager : NSObject {
     }
     
     //Banner Click Event
-    open func sendBannerClickEvent(segmentifyObject : BannerOperationsModel) {
+    @objc open func sendBannerClickEvent(segmentifyObject : BannerOperationsModel) {
         
         if segmentifyObject.type == nil {
             segmentifyObject.type = SegmentifyManager.bannerClickStep
@@ -2169,7 +2169,7 @@ public class SegmentifyManager : NSObject {
     }
     
     //Banner Update Event
-    open func sendBannerUpdateEvent(segmentifyObject : BannerOperationsModel) {
+    @objc open func sendBannerUpdateEvent(segmentifyObject : BannerOperationsModel) {
         
         if segmentifyObject.type == nil {
             segmentifyObject.type = SegmentifyManager.bannerUpdateStep
@@ -2189,7 +2189,7 @@ public class SegmentifyManager : NSObject {
     }
     
     //Banner GroupView Event
-    open func sendBannerGroupViewEvent(segmentifyObject : BannerGroupViewModel) {
+    @objc open func sendBannerGroupViewEvent(segmentifyObject : BannerGroupViewModel) {
         
         var bannerArray = [Any]()
         segmentifyObject.banners?.forEach {
@@ -2213,7 +2213,7 @@ public class SegmentifyManager : NSObject {
     }
     
     //Banner InternalBannerGroup Event
-    open func sendInternalBannerGroupEvent(segmentifyObject : BannerGroupViewModel) {
+    @objc open func sendInternalBannerGroupEvent(segmentifyObject : BannerGroupViewModel) {
         
         var bannerArray = [Any]()
         segmentifyObject.banners?.forEach {
@@ -2236,7 +2236,7 @@ public class SegmentifyManager : NSObject {
         setIDAndSendEvent()
     }
     
-    func addClickedBanner(banner: BannerOperationsModel) {
+    @objc func addClickedBanner(banner: BannerOperationsModel) {
         
         let results = self.clickedBanners.filter {$0.group == banner.group && $0.title == banner.title && $0.order == banner.order }
         let exists = results.isEmpty == false
@@ -2256,35 +2256,35 @@ public class SegmentifyManager : NSObject {
         self.clickedBanners.insert(cbo, at: 0)
     }
     
-    func setAdvertisingIdentifier(adIdentifier: String?) {
+    @objc func setAdvertisingIdentifier(adIdentifier: String?) {
         if let adIdentifier = adIdentifier {
             eventRequest.advertisingIdentifier = adIdentifier
         }
     }
     
-    func setAppVersion(appVersion: String?) {
+    @objc func setAppVersion(appVersion: String?) {
         if let appVersion = appVersion {
             eventRequest.appVersion = appVersion
         }
     }
     
-    func addParams(key: String, value: AnyObject?) {
+    @objc func addParams(key: String, value: AnyObject?) {
         if let value = value {
             eventRequest.extra[key] = value
         }
     }
     
-    func addCustomParameter(key: String?, value: AnyObject?) {
+    @objc func addCustomParameter(key: String?, value: AnyObject?) {
         if (key != nil && value != nil) {
             eventRequest.extra[key!] = value
         }
     }
     
-    func removeUserParameters() {
+    @objc func removeUserParameters() {
         eventRequest.extra.removeAll()
     }
 
-    func initSessionId(sessionId :String!){
+    @objc func initSessionId(sessionId :String!){
         let nw  =  NSDate().timeIntervalSince1970
         _ = round(NSDate().timeIntervalSince1970)
         let nowDate = Date(timeIntervalSince1970: nw)
@@ -2298,7 +2298,7 @@ public class SegmentifyManager : NSObject {
     }
     
     //private func
-    private func getUserIdAndSessionIdRequest(success : @escaping () -> Void) {
+    @objc private func getUserIdAndSessionIdRequest(success : @escaping () -> Void) {
         
         var requestURL : URL!
         let dataCenterUrl:String = SegmentifyManager.setup.dataCenterUrl!
