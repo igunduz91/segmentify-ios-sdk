@@ -90,6 +90,9 @@ public class SegmentifyRegisterRequest : NSObject,SegmentifyRequestProtocol {
     var order:NSNumber?
     var urls:[String]?
     var label:String?
+    var trigger:String?
+    var ordering:FacetedOrdering?
+    var filters:[Any]?
     
     var extra: [AnyHashable: Any] = [AnyHashable: Any]()
     
@@ -207,6 +210,9 @@ public class SegmentifyRegisterRequest : NSObject,SegmentifyRequestProtocol {
         self.banners = nil
         self.order = nil
         self.urls = nil
+        self.trigger = nil
+        self.ordering = nil
+        self.filters = nil
     }
     
     
@@ -413,8 +419,6 @@ public class SegmentifyRegisterRequest : NSObject,SegmentifyRequestProtocol {
         
         if self.eventName == "PRODUCT_VIEW" {
             dictionary["category"] = category as Any?
-        } else {
-            dictionary["category"] = nil
         }
         
         if let url = self.url {
@@ -586,6 +590,17 @@ public class SegmentifyRegisterRequest : NSObject,SegmentifyRequestProtocol {
         }
         
         dictionary["extra"] = extra as Any?
+        
+        if self.eventName == "SEARCH" {
+            dictionary["type"] = type
+            dictionary["trigger"] = trigger
+            dictionary["ordering"] = ordering?.dictionary
+            if self.filters != nil{
+                dictionary["filters"] = filters as Any?
+            } else {
+                dictionary["filters"] = nil
+            }
+        }
         return dictionary
     }
     

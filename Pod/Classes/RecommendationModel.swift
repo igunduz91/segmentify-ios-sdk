@@ -4,12 +4,12 @@
 
 import Foundation
 
-@objc public class RecommendationModel : NSObject,NSCopying {
+public class RecommendationModel : NSObject,NSCopying {
     public var notificationTitle:String?
-    @objc public var products:[ProductRecommendationModel]?
+    public var products:[ProductRecommendationModel]?
     public var errorString:String?
-    @objc public var instanceId:String?
-    @objc public var interactionId:String?
+    public var instanceId:String?
+    public var interactionId:String?
     
     public  override init() {
         

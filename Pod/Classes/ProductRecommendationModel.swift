@@ -4,36 +4,36 @@
 
 import Foundation
 
-@objc public class ProductRecommendationModel: NSObject, NSCopying {
+public class ProductRecommendationModel: NSObject, NSCopying {
 
-    @objc public var productId: String?
-    @objc public var name: String?
+    public var productId: String?
+    public var name: String?
     public var inStock: Bool?
-    @objc public var url: String?
-    @objc public var mUrl: String?
-    @objc public var image: String?
-    @objc public var imageXS: String?
-    @objc public var imageS: String?
-    @objc public var imageM: String?
-    @objc public var imageL: String?
-    @objc public var imageXL: String?
-    @objc public var category: [String]?
-    @objc public var categories: [String]?
-    @objc public var brand: String?
-    @objc public var price: NSNumber?
-    @objc public var oldPrice: NSNumber?
-    @objc public var gender: String?
-    @objc public var colors: [String]?
-    @objc public var sizes: [String]?
-    @objc public var labels: [String]?
+    public var url: String?
+    public var mUrl: String?
+    public var image: String?
+    public var imageXS: String?
+    public var imageS: String?
+    public var imageM: String?
+    public var imageL: String?
+    public var imageXL: String?
+    public var category: [String]?
+    public var categories: [String]?
+    public var brand: String?
+    public var price: NSNumber?
+    public var oldPrice: NSNumber?
+    public var gender: String?
+    public var colors: [String]?
+    public var sizes: [String]?
+    public var labels: [String]?
     public var noUpdate: Bool?
-    @objc public var params: [String: AnyObject]?
-    @objc public var priceText: String?
-    @objc public var oldPriceText: String?
-    @objc public var language: String?
-    @objc public var currency: String?
-    @objc public var specialPrice: NSNumber?
-    @objc public var specialPriceText: String?
+    public var params: [String: AnyObject]?
+    public var priceText: String?
+    public var oldPriceText: String?
+    public var language: String?
+    public var currency: String?
+    public var specialPrice: NSNumber?
+    public var specialPriceText: String?
 
     public func copy(with zone: NSZone? = nil) -> Any {
         let copy = ProductRecommendationModel(productId: productId, name: name, inStock: inStock, url: url, mUrl: mUrl,
