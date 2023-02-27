@@ -4,10 +4,10 @@
 
 import Foundation
 
-public class BasketModel: SegmentifyObject {
-    public override init() {}
-    public var step:String?
-    public var price:NSNumber?
-    public var quantity:NSNumber?
-    public var productId:String?
+@objc public class BasketModel: SegmentifyObject {
+    @objc public override init() {}
+    @objc public var step:String?
+    @objc public var price:NSNumber?
+    @objc public var quantity:NSNumber?
+    @objc public var productId:String?
 }
