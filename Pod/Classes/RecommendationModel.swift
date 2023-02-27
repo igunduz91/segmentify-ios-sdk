@@ -8,8 +8,8 @@ import Foundation
     public var notificationTitle:String?
     @objc public var products:[ProductRecommendationModel]?
     public var errorString:String?
-    public var instanceId:String?
-    public var interactionId:String?
+    @objc public var instanceId:String?
+    @objc public var interactionId:String?
     
     public  override init() {
         
