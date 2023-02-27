@@ -6,7 +6,7 @@ import Foundation
 
 public class RecommendationModel : NSObject,NSCopying {
     public var notificationTitle:String?
-    public var products:[ProductRecommendationModel]?
+    @objc public var products:[ProductRecommendationModel]?
     public var errorString:String?
     public var instanceId:String?
     public var interactionId:String?
