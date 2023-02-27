@@ -4,7 +4,7 @@
 
 import Foundation
 
-public class RecommendationModel : NSObject,NSCopying {
+@objc public class RecommendationModel : NSObject,NSCopying {
     public var notificationTitle:String?
     @objc public var products:[ProductRecommendationModel]?
     public var errorString:String?
