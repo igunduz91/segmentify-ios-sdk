@@ -82,17 +82,17 @@ public class SegmentifyManager : NSObject {
     static var logStatus: Bool = true
     static var _sessionKeepSecond: Int = 86400
     // set log status
-    public class func logStatus(isVisible: Bool) -> Bool{
+    @objc public class func logStatus(isVisible: Bool) -> Bool{
         logStatus = isVisible
         return isVisible
     }
     
-    public class func setSessionKeepSecond(sessionKeepSecond: Int) -> Int{
+    @objc public class func setSessionKeepSecond(sessionKeepSecond: Int) -> Int{
         _sessionKeepSecond = sessionKeepSecond
         return sessionKeepSecond
     }
 
-    public class func setConfig(apiKey: String,dataCenterUrl : String, subDomain : String) {
+    @objc public class func setConfig(apiKey: String,dataCenterUrl : String, subDomain : String) {
         SegmentifyManager.setup.apiKey = apiKey
         SegmentifyManager.setup.dataCenterUrl = dataCenterUrl
         SegmentifyManager.setup.subDomain = subDomain
@@ -103,7 +103,7 @@ public class SegmentifyManager : NSObject {
         SegmentifyManager.setup.dataCenterUrlPush = dataCenterUrlPush        
     }
     
-    public class func sharedManager() -> SegmentifyManager {
+    @objc public class func sharedManager() -> SegmentifyManager {
         if segmentifySharedInstance == nil {
             segmentifySharedInstance = SegmentifyManager.init()
         }
@@ -1334,7 +1334,7 @@ public class SegmentifyManager : NSObject {
     }
     
     //Checkout View Basket Event
-    open func sendViewBasket(segmentifyObject : CheckoutModel, callback: @escaping (_ recommendation: [RecommendationModel]) -> Void) {
+    @objc open func sendViewBasket(segmentifyObject : CheckoutModel, callback: @escaping (_ recommendation: [RecommendationModel]) -> Void) {
         eventRequest.eventName = SegmentifyManager.checkoutEventName
         eventRequest.checkoutStep = SegmentifyManager.viewBasketStep
         eventRequest.instanceId = nil
@@ -1382,7 +1382,7 @@ public class SegmentifyManager : NSObject {
     }
     
     //Add or Remove Basket Event
-    open func sendAddOrRemoveBasket(segmentifyObject : BasketModel) {
+    @objc open func sendAddOrRemoveBasket(segmentifyObject : BasketModel) {
         eventRequest.eventName = SegmentifyManager.basketOperationsEventName
         eventRequest.instanceId = nil
         eventRequest.interactionId = nil
